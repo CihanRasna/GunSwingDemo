@@ -1,3 +1,4 @@
+using System;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -81,6 +82,10 @@ namespace _Case.Scripts.Managers
         {
         }
 
+        protected virtual void OnDestroy()
+        {
+        }
+
         #endregion
     }
 
@@ -94,7 +99,7 @@ namespace _Case.Scripts.Managers
 
         #region Methods
 
-        private void OnApplicationQuit()
+        protected virtual void OnApplicationQuit()
         {
             Quitting = true;
         }
