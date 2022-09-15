@@ -1,4 +1,6 @@
-﻿namespace _Case.Scripts.Panels
+﻿using _Case.Scripts.Managers;
+
+namespace _Case.Scripts.Panels
 {
     public interface IFailedPanelDelegate : IPanelDelegate
     {
@@ -6,6 +8,9 @@
     }
     public class FailedPanel : Panel<IFailedPanelDelegate>
     {
-        
+        public void Retry()
+        {
+            LevelManager.Instance.LoadNextLevel();
+        }
     }
 }

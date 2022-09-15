@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Case.Scripts.Managers;
+using UnityEngine;
 
 namespace _Case.Scripts.Panels
 {
@@ -8,6 +9,9 @@ namespace _Case.Scripts.Panels
     }
     public class SucceedPanel : Panel<ISucceedPanelDelegate>
     {
-        
+        public void NextLevel()
+        {
+            LevelManager.Instance.LoadNextLevel();
+        }
     }
 }

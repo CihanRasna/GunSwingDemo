@@ -88,6 +88,8 @@ namespace _Case.Scripts.Managers
         {
             HideAllPanels();
             tutorialPanel.Display();
+            var count = PersistManager.Instance.playedLevelCount + 1;
+            gamePanel.GetLevelIdx(count);
         }
 
         private void LevelDidStart(BaseLevel level)
@@ -98,10 +100,14 @@ namespace _Case.Scripts.Managers
 
         private void LevelDidSuccess(BaseLevel level, float score)
         {
+            HideAllPanels();
+            succeedPanel.Display();
         }
 
         private void LevelDidFail(BaseLevel level)
         {
+            HideAllPanels();
+            failedPanel.Display();
         }
 
         private void LevelWillUnload(BaseLevel level)

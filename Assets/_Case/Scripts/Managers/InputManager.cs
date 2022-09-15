@@ -7,7 +7,7 @@ namespace _Case.Scripts.Managers
 {
     public class InputManager : Singleton<InputManager>
     {
-        private bool _isFirstTouch;
+        public bool _isFirstTouch;
         [SerializeField] private LeanTouch leanTouch;
 
 
