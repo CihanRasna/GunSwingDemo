@@ -7,8 +7,9 @@ namespace _Case.Scripts.Managers
 {
     public class InputManager : Singleton<InputManager>
     {
-        [SerializeField] private LeanTouch leanTouch;
         private bool _isFirstTouch;
+        [SerializeField] private LeanTouch leanTouch;
+
 
         protected override void Awake()
         {
@@ -17,7 +18,7 @@ namespace _Case.Scripts.Managers
             {
                 leanTouch = gameObject.AddComponent<LeanTouch>();
             }
-            
+
             LeanTouch.OnFingerDown += OnPointerDown;
             LeanTouch.OnFingerUp += OnPointerUp;
         }

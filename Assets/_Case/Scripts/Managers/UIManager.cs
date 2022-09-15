@@ -43,19 +43,6 @@ namespace _Case.Scripts.Managers
 
         protected override void OnApplicationQuit()
         {
-            LevelManager.Instance.levelDidLoad.RemoveListener(LevelDidLoad);
-            LevelManager.Instance.levelDidStart.RemoveListener(LevelDidStart);
-            LevelManager.Instance.levelDidSuccess.RemoveListener(LevelDidSuccess);
-            LevelManager.Instance.levelDidFail.RemoveListener(LevelDidFail);
-            LevelManager.Instance.levelWillUnload.RemoveListener(LevelWillUnload);
-            
-            base.OnApplicationQuit();
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-
             if (Quitting == false)
             {
                 LevelManager.Instance.levelDidLoad.RemoveListener(LevelDidLoad);
@@ -64,6 +51,22 @@ namespace _Case.Scripts.Managers
                 LevelManager.Instance.levelDidFail.RemoveListener(LevelDidFail);
                 LevelManager.Instance.levelWillUnload.RemoveListener(LevelWillUnload);
             }
+
+            base.OnApplicationQuit();
+        }
+
+        protected override void OnDestroy()
+        {
+            if (Quitting == false)
+            {
+                LevelManager.Instance.levelDidLoad.RemoveListener(LevelDidLoad);
+                LevelManager.Instance.levelDidStart.RemoveListener(LevelDidStart);
+                LevelManager.Instance.levelDidSuccess.RemoveListener(LevelDidSuccess);
+                LevelManager.Instance.levelDidFail.RemoveListener(LevelDidFail);
+                LevelManager.Instance.levelWillUnload.RemoveListener(LevelWillUnload);
+            }
+            
+            base.OnDestroy();
         }
 
         private void Update()
