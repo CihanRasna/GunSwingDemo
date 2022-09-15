@@ -1,4 +1,5 @@
 using System;
+using _Case.Scripts.Managers;
 using UnityEngine;
 
 namespace _Case.Scripts
@@ -38,6 +39,7 @@ namespace _Case.Scripts
 
             if (state == State.Loading)
             {
+                InputManager.Instance._isFirstTouch = false;
                 state = State.Loaded;
                 LevelDidLoad();
                 listener.Level_DidLoad(this);
@@ -58,6 +60,7 @@ namespace _Case.Scripts
         {
             if (state != State.Succeeded && state != State.Failed)
             {
+                PersistManager.Instance.playedLevelCount += 1;
                 state = State.Succeeded;
                 listener.Level_DidSuccess(this, score);
             }
@@ -95,7 +98,7 @@ namespace _Case.Scripts
 
         #region Validation
 
-        private void ValidateLevel()
+        private void  ValidateLevel()
         {
             if (GetComponentsInChildren<Player>().Length > 1)
             {
