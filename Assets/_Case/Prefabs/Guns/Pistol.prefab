@@ -99,7 +99,7 @@ MonoBehaviour:
   bullet: {fileID: 5152612757435064312, guid: c701237b6fe53674cad0783990ccae49, type: 3}
   pooledBulletCount: 30
   shootPerSec: 1.5
-  bulletSpeed: 30
+  bulletSpeed: 50
   shootPoint: {fileID: 6241213221472144839}
   damage: 5
 --- !u!1 &4424241705381761226

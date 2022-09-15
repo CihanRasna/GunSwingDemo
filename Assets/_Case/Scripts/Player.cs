@@ -11,12 +11,12 @@ namespace _Case.Scripts
         [SerializeField] private PlayerModel modelPrefab;
         [SerializeField] private Animator animator;
         [SerializeField] private int health;
-        [SerializeField] private float backwardSpeed;
+        [SerializeField] private float playerSpeed;
         [SerializeField] private List<Transform> gunPoints;
         [SerializeField] private int activeGunCount = 0;
         [HideInInspector] public bool canMove;
-        
-        
+
+        public float PlayerSpeed => playerSpeed;
         public List<RopeHandler> ropeHandlers;
         private static readonly int GameStarted = Animator.StringToHash("GameStarted");
 
@@ -26,7 +26,7 @@ namespace _Case.Scripts
             var valueTuple = playerModel.SendValuesToPlayer();
             animator = valueTuple.animator;
             health = valueTuple.health;
-            backwardSpeed = valueTuple.backwardSpeed;
+            playerSpeed = valueTuple.backwardSpeed;
             gunPoints = valueTuple.gunPoints;
         }
 
@@ -78,9 +78,10 @@ namespace _Case.Scripts
         {
             if (canMove)
             {
-                var pos = transform.position;
-                pos.z -= backwardSpeed * Time.deltaTime;
-                transform.position = pos;
+                var myTransform = transform;
+                var pos = myTransform.position;
+                pos.z -= playerSpeed * Time.deltaTime;
+                myTransform.position = pos;
             }
         }
 

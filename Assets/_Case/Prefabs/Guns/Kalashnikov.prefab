@@ -98,8 +98,8 @@ MonoBehaviour:
   weaponLevel: 3
   bullet: {fileID: 5152612757435064312, guid: c701237b6fe53674cad0783990ccae49, type: 3}
   pooledBulletCount: 50
-  shootPerSec: 3
-  bulletSpeed: 40
+  shootPerSec: 4
+  bulletSpeed: 50
   shootPoint: {fileID: 8779322627523888768}
   damage: 5
 --- !u!1 &1595336785196077671

@@ -99,9 +99,9 @@ MonoBehaviour:
   bullet: {fileID: 7083560558811065068, guid: c90e29fbcc1718d408dba0b36407c15d, type: 3}
   pooledBulletCount: 20
   shootPerSec: 1
-  bulletSpeed: 40
+  bulletSpeed: 50
   shootPoint: {fileID: 431146036889733543}
-  damage: 15
+  damage: 25
 --- !u!1 &6195818909259451804
 GameObject:
   m_ObjectHideFlags: 0

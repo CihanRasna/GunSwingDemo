@@ -39,7 +39,8 @@ namespace _Case.Scripts.Guns
 
         protected virtual void Update()
         {
-            transform.position += (Time.deltaTime * bulletSpeed) * transform.forward;
+            var myTransform = transform;
+            myTransform.position += (Time.deltaTime * bulletSpeed) * myTransform.forward;
         }
 
         protected virtual void OnTriggerEnter(Collider other)
