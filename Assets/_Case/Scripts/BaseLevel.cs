@@ -91,7 +91,7 @@ namespace _Case.Scripts
 
         #endregion
 
-        [SerializeField] protected Player player;
+        public Player player;
 
         #region Validation
 
